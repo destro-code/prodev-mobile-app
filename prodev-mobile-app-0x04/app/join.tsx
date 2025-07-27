@@ -10,64 +10,91 @@ export default function Join() {
 
   return (
     <View style={styles.container}>
-      {/* Top Icons */}
+      {/* ← Back & menu icons */}
       <View style={styles.iconsection}>
-        <MaterialIcons name="arrow-back-ios" size={24} onPress={() => router.back()} />
+        <MaterialIcons
+          name="arrow-back-ios"
+          size={24}
+          onPress={() => router.back()}
+        />
         <MaterialIcons name="more-vert" size={24} />
       </View>
 
-      {/* Title */}
+      {/* Title + subtitle */}
       <View style={styles.titleTextGroup}>
         <Text style={styles.titleText}>Join Now</Text>
         <Text style={styles.subText}>Create an account to get started</Text>
       </View>
 
-      {/* Form */}
+      {/* Form fields */}
       <View style={styles.formGroup}>
+        {/* Name */}
         <View>
           <Text style={styles.formLabel}>Name</Text>
-          <TextInput placeholder="Enter full name" style={styles.formControl} />
+          <TextInput
+            placeholder="Enter full name"
+            style={styles.formControl}
+          />
         </View>
+
+        {/* Email */}
         <View>
           <Text style={styles.formLabel}>Email Address</Text>
-          <TextInput placeholder="Enter your email" style={styles.formControl} />
+          <TextInput
+            placeholder="Enter your email"
+            style={styles.formControl}
+            keyboardType="email-address"
+          />
         </View>
+
+        {/* Password */}
         <View>
           <Text style={styles.formLabel}>Password</Text>
           <View style={styles.formPasswordControl}>
-            <TextInput placeholder="Enter your password" secureTextEntry style={styles.passwordControl} />
+            <TextInput
+              placeholder="Enter your password"
+              secureTextEntry
+              style={styles.passwordControl}
+            />
             <MaterialIcons name="visibility-off" size={24} />
           </View>
         </View>
       </View>
 
-      {/* Join Button */}
+      {/* Join button */}
       <TouchableOpacity style={styles.primaryButton}>
         <Text style={styles.buttonText}>Join</Text>
       </TouchableOpacity>
 
-      {/* Divider */}
+      {/* OR divider */}
       <View style={styles.dividerGroup}>
         <View style={styles.divider} />
         <Text style={styles.dividerText}>OR</Text>
         <View style={styles.divider} />
       </View>
 
-      {/* Social Login */}
+      {/* Social login buttons */}
       <View style={styles.secondaryButtonGroup}>
         <TouchableOpacity style={styles.secondaryButton}>
           <Image source={GOOGLELOGO} />
-          <Text style={styles.secondaryButtonText}>Continue with Google</Text>
+          <Text style={styles.secondaryButtonText}>
+            Continue with Google
+          </Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.secondaryButton}>
           <Image source={FACEBOOKLOGO} />
-          <Text style={styles.secondaryButtonText}>Continue with Facebook</Text>
+          <Text style={styles.secondaryButtonText}>
+            Continue with Facebook
+          </Text>
         </TouchableOpacity>
       </View>
 
-      {/* Signin Redirect */}
+      {/* Redirect to Sign‑In */}
       <View style={styles.signupgroup}>
-        <Text style={styles.signupTitleText}>Already have an account? </Text>
+        <Text style={styles.signupTitleText}>
+          Already have an account?
+        </Text>
         <TouchableOpacity onPress={() => router.push('signin')}>
           <Text style={styles.signupSubTitleText}>Sign in</Text>
         </TouchableOpacity>
